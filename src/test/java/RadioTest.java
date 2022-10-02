@@ -91,11 +91,11 @@ public class RadioTest {
     @Test
     public void volumeMax() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
 
 
         int actual = radio.getCurrentVolume();
-        int expected = 10;
+        int expected = 100;
 
         Assertions.assertEquals(expected, actual);
 
@@ -104,11 +104,11 @@ public class RadioTest {
     @Test
     public void volumeIncrease() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(9);
+        radio.setCurrentVolume(99);
         radio.increaseVolume();
 
         int actual = radio.getCurrentVolume();
-        int expected = 10;
+        int expected = 100;
 
         Assertions.assertEquals(expected, actual);
 
@@ -116,7 +116,7 @@ public class RadioTest {
     @Test
     public void volumeAboveMax() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(12);
+        radio.setCurrentVolume(101);
         radio.increaseVolume();
 
         int actual = radio.getCurrentVolume();
@@ -147,11 +147,11 @@ public class RadioTest {
     @Test
     public void volumeIncreaseMax() {
         Radio radio = new Radio();
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.increaseVolume();
 
         int actual = radio.getCurrentVolume();
-        int expected = 10;
+        int expected = 100;
 
         Assertions.assertEquals(expected, actual);
 
@@ -193,5 +193,16 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+    @Test
+    public void Station() {
+        Radio radio = new Radio( 30);
+        radio.setCurrentStation(20);
 
+
+        int actual = radio.getCurrentStation();
+        int expected = 20;
+
+        Assertions.assertEquals(expected, actual);
+
+    }
 }
